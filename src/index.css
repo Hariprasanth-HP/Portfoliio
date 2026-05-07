@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: 'Inter', sans-serif;
+    --color-background: #0f172a;
+    --color-foreground: #94a3b8;
+    --color-primary: #5eead4;
+    --color-primary-foreground: #0f172a;
+    --color-secondary: #0f172a;
+    --color-secondary-foreground: #f1f5f9;
+    --color-accent: #1e293b;
+    --color-accent-foreground: #f1f5f9;
+    --color-muted: #1e293b;
+    --color-muted-foreground: #64748b;
+    --color-border: rgba(148, 163, 184, 0.1);
+    --color-card: #0f172a;
+    --color-card-foreground: #f1f5f9;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-none;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans scroll-smooth;
+    }
+  
+  ::selection {
+    @apply bg-teal-300/30 text-teal-300;
+  }
+}

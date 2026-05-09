@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUpRight, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -13,6 +13,7 @@ const navItems = [
   { name: 'Experience', id: 'experience' },
   { name: 'Projects', id: 'projects' },
   { name: 'Education', id: 'education' },
+  { name: 'Resume', id: 'resume' },
 ];
 
 const experiences = [
@@ -298,10 +299,81 @@ export default function App() {
                 <ul className="mt-4 flex flex-wrap">
                   {skills.map((skill) => (
                     <li key={skill} className="mr-1.5 mt-2">
-                      <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">{skill}</div>
+                       <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">{skill}</div>
                     </li>
                   ))}
                 </ul>
+              </div>
+            </section>
+
+            {/* Resume Section */}
+            <section id="resume" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="Resume">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#0f172a]/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Resume</h2>
+              </div>
+              <div className="max-w-md">
+                <p className="mb-6 text-sm text-slate-400">
+                  You can view or download my detailed professional resume below. It contains my full employment history, educational background, and a comprehensive list of my technical skills and certifications.
+                </p>
+                <div className="group relative rounded-xl border border-slate-200/10 bg-slate-800/50 p-6 transition-all hover:border-slate-200/30">
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="mb-4 rounded-full bg-teal-400/10 p-4 text-teal-300">
+                      <FileText size={32} />
+                    </div>
+                    <h3 className="mb-2 text-lg font-medium text-slate-200">Hari Prasanth Résumé</h3>
+                    <p className="mb-6 text-xs text-slate-500 uppercase tracking-widest">PDF Format • 1.2 MB</p>
+                    
+                    <div className="flex gap-4">
+                      <a 
+                        href={`${import.meta.env.BASE_URL}resume.pdf`} 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="inline-flex items-center rounded-md bg-slate-200 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-teal-300 hover:text-teal-900"
+                      >
+                        View External
+                        <ArrowUpRight size={16} className="ml-1" />
+                      </a>
+                      <a 
+                        href={`${import.meta.env.BASE_URL}resume.pdf`} 
+                        download
+                        className="inline-flex items-center rounded-md border border-slate-200/30 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:bg-slate-200 hover:text-slate-900"
+                      >
+                        Download PDF
+                      </a>
+                    </div>
+                  </div>
+                  
+                  {/* PDF Viewer Placeholder/Embed */}
+                  <div className="mt-8 overflow-hidden rounded-lg border border-slate-200/10 bg-[#0f172a]">
+                    <div className="flex items-center justify-between bg-slate-800/50 px-3 py-2 border-b border-slate-200/10">
+                      <div className="flex gap-1.5">
+                        <div className="h-2 w-2 rounded-full bg-slate-600"></div>
+                        <div className="h-2 w-2 rounded-full bg-slate-600"></div>
+                        <div className="h-2 w-2 rounded-full bg-slate-600"></div>
+                      </div>
+                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Resume Preview</span>
+                    </div>
+                    <div className="aspect-[1/1.4] w-full border-none relative">
+                      <iframe 
+                        src={`${import.meta.env.BASE_URL}resume.pdf#toolbar=0&navpanes=0&scrollbar=1`} 
+                        className="w-full h-full border-none rounded-b-lg absolute inset-0"
+                        title="Resume Preview"
+                      >
+                        <div className="flex flex-col items-center justify-center h-full p-8 text-center">
+                          <p className="text-sm text-slate-400 mb-4">PDF Preview is not supported in this environment.</p>
+                          <a 
+                            href={`${import.meta.env.BASE_URL}resume.pdf`} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="text-teal-300 hover:underline text-xs"
+                          >
+                            Click here to view it in a new tab
+                          </a>
+                        </div>
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 

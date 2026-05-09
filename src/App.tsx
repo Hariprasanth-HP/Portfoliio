@@ -50,9 +50,9 @@ const projects = [
   },
   {
     title: 'Supervisor Web Application',
-    description: 'Technical documentation and control interface for sensor management. Streamlined complex sensor configurations into a user-friendly interface.',
-    skills: ['React', 'Technical Documentation', 'Sensors', 'UI/UX'],
-    link: 'https://www.econolite.com/support-page/technical-documentation/sensors/autoscope-vision-v3-7-0/'
+    description: 'A web-based version of the flagship desktop application for Intelligent Transportation Systems (ITS). Features comprehensive camera device management with listing, traffic monitoring, and real-time event detection for identifying wrong-way drivers and near-miss incidents. Developed to provide actionable data insights for improving roadway safety and traffic efficiency.',
+    skills: ['React', 'ITS', 'Traffic Monitoring', 'Real-time Data'],
+    link: 'https://www.imagesensing.com/about.html'
   }
 ];
 
@@ -289,7 +289,17 @@ export default function App() {
               <div>
                 <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
                   <div className="z-10 sm:col-span-6">
-                    <h3 className="font-medium leading-snug text-slate-200">Rajalakshmi Engineering College</h3>
+                    <h3 className="font-medium leading-snug text-slate-200">
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=Rajalakshmi+Engineering+College" 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                      >
+                        <span>Rajalakshmi Engineering College</span>
+                        <ArrowUpRight size={16} className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" />
+                      </a>
+                    </h3>
                     <p className="text-sm text-slate-400">Bachelor of Engineering (EEE)</p>
                     <p className="text-xs text-slate-500 mt-1">Chennai, India</p>
                   </div>
@@ -313,7 +323,7 @@ export default function App() {
               </div>
               <div className="max-w-md">
                 <p className="mb-6 text-sm text-slate-400">
-                  You can view or download my detailed professional resume below. It contains my full employment history, educational background, and a comprehensive list of my technical skills and certifications.
+                  Check my resume to view or download my full employment history, educational background, and a comprehensive list of my technical skills and certifications.
                 </p>
                 <div className="group relative rounded-xl border border-slate-200/10 bg-slate-800/50 p-6 transition-all hover:border-slate-200/30">
                   <div className="flex flex-col items-center justify-center text-center">
@@ -377,10 +387,6 @@ export default function App() {
               </div>
             </section>
 
-            {/* Footer */}
-            <footer className="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
-              <p>Loosely designed in <a href="https://www.figma.com/" className="font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">Figma</a> and coded in <a href="https://code.visualstudio.com/" className="font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">Visual Studio Code</a>. Built with <a href="https://react.dev/" className="font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">React</a>, <a href="https://tailwindcss.com/" className="font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">Tailwind CSS</a>, and <a href="https://www.framer.com/motion/" className="font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">Framer Motion</a>, deployed via <a href="https://cloud.google.com/run" className="font-medium text-slate-400 hover:text-teal-300" target="_blank" rel="noreferrer">Cloud Run</a>.</p>
-            </footer>
             
           </motion.main>
         </div>
